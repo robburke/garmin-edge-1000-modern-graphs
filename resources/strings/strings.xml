@@ -1,0 +1,14 @@
+<strings>
+    <string id="AppNamePower">Varia-Safe Power</string>
+    <string id="AppNameCadence">Varia-Safe Cadence</string>
+    <string id="AppNameHr">Varia-Safe HR</string>
+    <string id="FtpTitle">FTP (watts)</string>
+    <string id="MaxHrTitle">Max HR fallback (bpm)</string>
+    <string id="WindowTitle">Graph window (seconds)</string>
+    <string id="MarginTitle">Right margin px (Varia)</string>
+    <string id="CadColorTitle">Cadence: colour bars</string>
+    <string id="CadLowTitle">Cadence grey below (rpm)</string>
+    <string id="CadGreenLoTitle">Cadence green from (rpm)</string>
+    <string id="CadGreenHiTitle">Cadence green to (rpm)</string>
+    <string id="CadHighTitle">Cadence red above (rpm)</string>
+</strings>

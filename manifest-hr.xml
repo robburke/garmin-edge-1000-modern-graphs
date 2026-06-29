@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <iq:application entry="HrGraphApp"
+                   id="7359115cded04604b9735f4d7e422399"
+                   launcherIcon="@Drawables.LauncherIcon"
+                   name="@Strings.AppNameHr"
+                   type="datafield">
+        <iq:products>
+            <iq:product id="edge_1000"/>
+            <iq:product id="edge_520"/>
+            <iq:product id="edge820"/>
+            <iq:product id="edge1030"/>
+            <iq:product id="edge530"/>
+            <iq:product id="edge830"/>
+            <iq:product id="edge520plus"/>
+        </iq:products>
+        <iq:permissions>
+            <iq:uses-permission id="UserProfile"/>
+        </iq:permissions>
+        <iq:languages><iq:language>eng</iq:language></iq:languages>
+    </iq:application>
+</iq:manifest>

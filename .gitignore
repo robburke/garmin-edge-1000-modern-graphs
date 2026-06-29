@@ -1,0 +1,15 @@
+# build output
+bin/
+*.prg
+*.iq
+*.debug.xml
+
+# developer signing keys (NEVER commit these)
+developer_key
+developer_key.pem
+*.der
+
+# editor / os
+.DS_Store
+.vscode/
+.appid

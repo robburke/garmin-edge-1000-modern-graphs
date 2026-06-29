@@ -1,0 +1,29 @@
+<settings>
+    <setting propertyKey="@Properties.ftp" title="@Strings.FtpTitle">
+        <settingConfig type="numeric" min="50" max="600"/>
+    </setting>
+    <setting propertyKey="@Properties.maxHr" title="@Strings.MaxHrTitle">
+        <settingConfig type="numeric" min="120" max="230"/>
+    </setting>
+    <setting propertyKey="@Properties.windowSec" title="@Strings.WindowTitle">
+        <settingConfig type="numeric" min="30" max="600"/>
+    </setting>
+    <setting propertyKey="@Properties.rmargin" title="@Strings.MarginTitle">
+        <settingConfig type="numeric" min="0" max="90"/>
+    </setting>
+    <setting propertyKey="@Properties.cadColor" title="@Strings.CadColorTitle">
+        <settingConfig type="boolean"/>
+    </setting>
+    <setting propertyKey="@Properties.cadLow" title="@Strings.CadLowTitle">
+        <settingConfig type="numeric" min="40" max="120"/>
+    </setting>
+    <setting propertyKey="@Properties.cadGreenLo" title="@Strings.CadGreenLoTitle">
+        <settingConfig type="numeric" min="50" max="120"/>
+    </setting>
+    <setting propertyKey="@Properties.cadGreenHi" title="@Strings.CadGreenHiTitle">
+        <settingConfig type="numeric" min="60" max="140"/>
+    </setting>
+    <setting propertyKey="@Properties.cadHigh" title="@Strings.CadHighTitle">
+        <settingConfig type="numeric" min="70" max="160"/>
+    </setting>
+</settings>
