@@ -1,4 +1,4 @@
-# Varia-Safe Graphs for the Garmin Edge 1000
+# Modern, Varia-Safe Graphs for the Garmin Edge 1000
 
 Three Connect IQ data fields, **Power**, **Cadence**, and **Heart Rate**, that bring big, legible, **live graph visualizations** to the aging **Garmin Edge 1000**, and keep your numbers readable even when a Garmin Varia radar is warning you about traffic behind.
 
