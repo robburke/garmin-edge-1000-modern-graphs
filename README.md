@@ -4,6 +4,12 @@ Three Connect IQ data fields, **Power**, **Cadence**, and **Heart Rate**, that b
 
 > Made for Edge 1000 owners who want the kind of graph dashboards the newer Edge units (1040/1050) have, and **especially for anyone whose eyes aren't what they used to be.** Big numbers, clear colours, glance and go.
 
+![On the bike: Power, Heart Rate, and Cadence with live graphs on a Garmin Edge 1000](docs/on-the-bike.jpg)
+
+*The real glance test, on the road: Power 182 / Heart Rate 139 / Cadence 88, each with its own live graph, plus distance. Readable at speed in real light.*
+
+The three fields up close (simulator):
+
 | Power | Heart Rate | Cadence |
 |:---:|:---:|:---:|
 | ![Power](docs/screenshot-power.png) | ![Heart Rate](docs/screenshot-hr.png) | ![Cadence](docs/screenshot-cadence.png) |
