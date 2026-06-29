@@ -58,9 +58,10 @@ class CadenceField extends GraphField {
 }
 
 class CadenceGraphApp extends App.AppBase {
+    hidden var mView;
     function initialize() { AppBase.initialize(); }
     function onStart(s) { }
     function onStop(s) { }
-    function getInitialView() { return [ new CadenceField() ]; }
-    function onSettingsChanged() { Ui.requestUpdate(); }
+    function getInitialView() { mView = new CadenceField(); return [ mView ]; }
+    function onSettingsChanged() { if (mView != null) { mView.reloadSettings(); } Ui.requestUpdate(); }
 }

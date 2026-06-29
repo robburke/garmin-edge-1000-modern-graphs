@@ -20,7 +20,6 @@ class PowerField extends GraphField {
     }
     function minSpan() { return 80; }
     function floorClamp() { return 0; }
-    function referenceValue() { return mFtp; }
     function barColor(v) {
         var pct = (v * 100) / mFtp;
         if (pct < 55)  { return Gfx.COLOR_LT_GRAY; }
@@ -47,9 +46,10 @@ class PowerField extends GraphField {
 }
 
 class PowerGraphApp extends App.AppBase {
+    hidden var mView;
     function initialize() { AppBase.initialize(); }
     function onStart(s) { }
     function onStop(s) { }
-    function getInitialView() { return [ new PowerField() ]; }
-    function onSettingsChanged() { Ui.requestUpdate(); }
+    function getInitialView() { mView = new PowerField(); return [ mView ]; }
+    function onSettingsChanged() { if (mView != null) { mView.reloadSettings(); } Ui.requestUpdate(); }
 }

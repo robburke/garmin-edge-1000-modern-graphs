@@ -10,7 +10,6 @@ using Toybox.UserProfile;
 class HrField extends GraphField {
     hidden var mZones;   // null, or [minZ1, maxZ1, maxZ2, maxZ3, maxZ4, maxZ5]
     hidden var mMaxHr;
-    hidden var mLthr;
 
     function initialize() { GraphField.initialize(); }
 
@@ -25,14 +24,6 @@ class HrField extends GraphField {
             var z = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_BIKING);
             if (z != null && z.size() >= 6) { mZones = z; }
         }
-
-        if (mZones != null) {
-            mLthr = mZones[4];                 // top of zone 4 ~ threshold HR
-        } else {
-            mLthr = (mMaxHr * 90) / 100;
-            var l = App.getApp().getProperty("lthr");
-            if (l != null) { mLthr = l; }
-        }
     }
 
     function sample(info) {
@@ -40,7 +31,6 @@ class HrField extends GraphField {
     }
     function minSpan() { return 25; }
     function floorClamp() { return 40; }
-    function referenceValue() { return mLthr; }
     function barColor(v) {
         if (mZones != null) {
             if (v < mZones[1]) { return Gfx.COLOR_LT_GRAY; } // zone 1
@@ -73,9 +63,10 @@ class HrField extends GraphField {
 }
 
 class HrGraphApp extends App.AppBase {
+    hidden var mView;
     function initialize() { AppBase.initialize(); }
     function onStart(s) { }
     function onStop(s) { }
-    function getInitialView() { return [ new HrField() ]; }
-    function onSettingsChanged() { Ui.requestUpdate(); }
+    function getInitialView() { mView = new HrField(); return [ mView ]; }
+    function onSettingsChanged() { if (mView != null) { mView.reloadSettings(); } Ui.requestUpdate(); }
 }

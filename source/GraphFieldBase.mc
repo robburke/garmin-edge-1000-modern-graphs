@@ -34,11 +34,17 @@ class GraphField extends Ui.DataField {
         DataField.initialize();
         mBuf = new [CAP];
         for (var i = 0; i < CAP; i += 1) { mBuf[i] = 0; }
+        reloadSettings();
+    }
+
+    // Read all user settings. Called on init and again from the app's
+    // onSettingsChanged, so edits in Garmin Express apply live.
+    function reloadSettings() {
         var a = App.getApp();
         var v = a.getProperty("windowSec");
-        if (v != null) { mWindow = v; }
+        mWindow = (v != null) ? v : 120;
         v = a.getProperty("rmargin");
-        if (v != null) { mMargin = v; }
+        mMargin = (v != null) ? v : 10;
         if (mWindow < 30) { mWindow = 30; }
         if (mWindow > CAP) { mWindow = CAP; }
         if (mMargin < 0) { mMargin = 0; }
@@ -51,7 +57,6 @@ class GraphField extends Ui.DataField {
     function barColor(v) { return Gfx.COLOR_DK_GRAY; }
     function minSpan() { return 20; }
     function floorClamp() { return 0; }
-    function referenceValue() { return null; }
     function drawIcon(dc, x, y, s) { }   // metric glyph in an s-by-s box at (x,y)
 
     function compute(info) {

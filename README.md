@@ -84,3 +84,7 @@ Built collaboratively by **Rob Burke** and Claude Code over a couple of evenings
 ## License
 
 MIT, see [LICENSE](LICENSE). Share, fork, and improve, especially if it helps you keep your eyes on the road.
+
+## Disclaimer
+
+Garmin, Edge, Varia, and Connect IQ are trademarks of Garmin Ltd. or its subsidiaries. This is an independent, community project, not affiliated with, endorsed by, or supported by Garmin. Use at your own risk; sideload at your own discretion.
