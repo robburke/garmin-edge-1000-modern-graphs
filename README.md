@@ -4,9 +4,11 @@ Three Connect IQ data fields, **Power**, **Cadence**, and **Heart Rate**, that b
 
 > Made for Edge 1000 owners who want the kind of graph dashboards the newer Edge units (1040/1050) have, and **especially for anyone whose eyes aren't what they used to be.** Big numbers, clear colours, glance and go.
 
-![Varia-Safe Power field with live data](docs/screenshot-power.png)
+| Power | Heart Rate | Cadence |
+|:---:|:---:|:---:|
+| ![Power](docs/screenshot-power.png) | ![Heart Rate](docs/screenshot-hr.png) | ![Cadence](docs/screenshot-cadence.png) |
 
-*Power field: big number + small icon on the left, live zone-coloured graph filling the right, with a faint FTP reference line.*
+*The three fields with live (simulated) data: small metric icon + big number on the left, colour-coded auto-scaling graph on the right.*
 
 ## Why this exists
 
@@ -19,10 +21,10 @@ These fields fix both problems: a **big number on the left** (always readable, w
 - **Big auto-sized number** in the device's largest font, with a small metric icon stacked above it (lightning / heart / rotation ring).
 - **Live rolling graph** that **auto-scales** to your recent data so the variation always fills the height, smoothed so the axis glides instead of jittering.
 - **Zone colours that carry the meaning**, so the floating graph stays honest:
-  - **Power** — Coggan-style zones by % FTP, with a faint **FTP reference line**.
-  - **Heart Rate** — your **actual device HR zones**, read from your Garmin profile and auto-updating, with a **threshold reference line**.
+  - **Power** — Coggan-style zones by % FTP.
+  - **Heart Rate** — your **actual device HR zones**, read from your Garmin profile and auto-updating.
   - **Cadence** — a configurable **target band** (default green 85-100 rpm) to encourage a smooth, higher spin; fully tunable and switchable to plain grey.
-- **Varia-safe layout**: numbers stay on the left; a small right margin (default 10px) is kept clear for the radar bar. If a reference line is off the current scale, a tiny arrow points toward it.
+- **Varia-safe layout**: numbers stay on the left; a small right margin (default 10px) is kept clear for the radar bar.
 
 ## Compatibility
 
@@ -71,7 +73,7 @@ Eject, unplug, then assign each to a **1- or 2-field data screen → Connect IQ*
 
 ## How it was made
 
-Built collaboratively (a human and Claude Code) over a couple of evenings, from "my hand-me-down Edge 1000 is hard to read on the road" to a compiled, sideloaded, three-field graph suite. The data-visualization choices, dynamic autoscale with zone colour, the sparkline-style layout, the cadence target band, lean on Edward Tufte's principles and a bit of cycling-coaching research.
+Built collaboratively by **Rob Burke** and Claude Code over a couple of evenings, from "my hand-me-down Edge 1000 is hard to read on the road" to a compiled, sideloaded, three-field graph suite. The data-visualization choices, dynamic autoscale with zone colour, the sparkline-style layout, the cadence target band, lean on Edward Tufte's principles and a bit of cycling-coaching research.
 
 ## License
 
