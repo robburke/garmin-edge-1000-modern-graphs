@@ -79,7 +79,7 @@ Eject, unplug, then assign each to a **1- or 2-field data screen → Connect IQ*
 
 ## How it was made
 
-Built collaboratively by **Rob Burke** and Claude Code over a couple of evenings, from "my hand-me-down Edge 1000 is hard to read on the road" to a compiled, sideloaded, three-field graph suite. The data-visualization choices, dynamic autoscale with zone colour, the sparkline-style layout, the cadence target band, lean on Edward Tufte's principles and a bit of cycling-coaching research.
+Built collaboratively by **Rob Burke** and Claude Code over a couple of evenings — the story of the build is on Rob's site: **[Man / Machine Drawer](https://robburke.net/side-quests/man-machine-drawer/)**. From "my hand-me-down Edge 1000 is hard to read on the road" to a compiled, sideloaded, three-field graph suite. The data-visualization choices, dynamic autoscale with zone colour, the sparkline-style layout, the cadence target band, lean on Edward Tufte's principles and a bit of cycling-coaching research.
 
 ## License
 
