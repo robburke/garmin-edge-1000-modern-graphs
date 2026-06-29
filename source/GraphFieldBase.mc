@@ -171,18 +171,7 @@ class GraphField extends Ui.DataField {
             dc.fillRectangle(x, gBot - bh, bw, bh);
         }
 
-        // reference line / off-frame marker -- only while there's data
-        var ref = referenceValue();
-        if (ref != null && lo != null) {
-            dc.setColor(Gfx.COLOR_DK_GRAY, Gfx.COLOR_TRANSPARENT);
-            if (ref >= base && ref <= top) {
-                var ry = (gBot - (((ref - base) * gH) / vspan)).toNumber();
-                dc.drawLine(gL, ry, gR, ry);
-            } else if (ref > top) {
-                dc.fillPolygon([[gL, gTop + 6], [gL + 6, gTop + 6], [gL + 3, gTop]]);
-            } else {
-                dc.fillPolygon([[gL, gBot - 6], [gL + 6, gBot - 6], [gL + 3, gBot]]);
-            }
-        }
+        // (Reference lines removed: with a floating auto-scale a fixed value
+        // drifts vertically, and the zone colours already mark FTP / threshold.)
     }
 }
