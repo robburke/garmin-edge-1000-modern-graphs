@@ -31,6 +31,7 @@ These fields fix both problems: a **big number on the left** (always readable, w
   - **Heart Rate** — your **actual device HR zones**, read from your Garmin profile and auto-updating.
   - **Cadence** — a configurable **target band** (default green 85-100 rpm) to encourage a smooth, higher spin; fully tunable and switchable to plain grey.
 - **Varia-safe layout**: numbers stay on the left; a small right margin (default 10px) is kept clear for the radar bar.
+- **Automatic dark mode**: the fields follow the device's day/night theme. Set **Display > Color Mode > Auto** on the Edge and they flip to a black background with a light number at dusk on their own, no setting to toggle, no separate field.
 
 ## Compatibility
 

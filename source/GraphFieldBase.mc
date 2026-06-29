@@ -29,6 +29,7 @@ class GraphField extends Ui.DataField {
     hidden var mMargin = 10;      // px kept clear on the right for the Varia bar
     hidden var mSmBase = null;
     hidden var mSmTop = null;
+    hidden var mBg = Gfx.COLOR_WHITE;   // last system background (day=white / night=black)
 
     function initialize() {
         DataField.initialize();
@@ -59,6 +60,12 @@ class GraphField extends Ui.DataField {
     function floorClamp() { return 0; }
     function drawIcon(dc, x, y, s) { }   // metric glyph in an s-by-s box at (x,y)
 
+    // Auto dark mode: the Edge reports its day/night background via
+    // getBackgroundColor() (flips with Display > Color Mode > Auto). The big
+    // number and the neutral-grey elements follow it; zone/icon colours don't.
+    function fg() { return (mBg == Gfx.COLOR_BLACK) ? Gfx.COLOR_WHITE : Gfx.COLOR_BLACK; }
+    function neutral() { return (mBg == Gfx.COLOR_BLACK) ? Gfx.COLOR_LT_GRAY : Gfx.COLOR_DK_GRAY; }
+
     function compute(info) {
         var s = sample(info);
         if (s == null) { s = 0; }
@@ -84,7 +91,10 @@ class GraphField extends Ui.DataField {
     function onUpdate(dc) {
         var w = dc.getWidth();
         var h = dc.getHeight();
-        dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_WHITE);
+        var bg = getBackgroundColor();
+        if (bg == null) { bg = Gfx.COLOR_WHITE; }
+        mBg = bg;
+        dc.setColor(bg, bg);
         dc.clear();
 
         // ----- left zone: small icon STACKED above a BIG number (digits get full width) -----
@@ -107,7 +117,7 @@ class GraphField extends Ui.DataField {
         // icon centered over the digit column; number centered within it
         var colCenter = xL + numColW / 2;
         drawIcon(dc, colCenter - iconS / 2, blockTop, iconS);
-        dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT);
+        dc.setColor(fg(), Gfx.COLOR_TRANSPARENT);
         dc.drawText(colCenter, blockTop + iconS + 2, nf, mCur.format("%d"), Gfx.TEXT_JUSTIFY_CENTER);
 
         // ----- right: graph zone, left edge after the reserved digit column -----

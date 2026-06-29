@@ -32,7 +32,7 @@ class CadenceField extends GraphField {
     function minSpan() { return 25; }
     function floorClamp() { return 0; }
     function barColor(v) {
-        if (!mColor) { return Gfx.COLOR_DK_GRAY; }   // colours off: clean grey
+        if (!mColor) { return neutral(); }           // colours off: clean grey (dark-mode aware)
         if (v < mLow)  { return Gfx.COLOR_LT_GRAY; }
         if (v < mGLo)  { return Gfx.COLOR_ORANGE; }
         if (v <= mGHi) { return Gfx.COLOR_GREEN; }
@@ -42,7 +42,7 @@ class CadenceField extends GraphField {
 
     // rotation ring with a clockwise arrowhead (shifted down for a top gap)
     function drawIcon(dc, x, y, s) {
-        dc.setColor(Gfx.COLOR_DK_GRAY, Gfx.COLOR_TRANSPARENT);
+        dc.setColor(neutral(), Gfx.COLOR_TRANSPARENT);
         var cx = x + s / 2;
         var cy = y + (58 * s) / 100;
         var r = (32 * s) / 100;
